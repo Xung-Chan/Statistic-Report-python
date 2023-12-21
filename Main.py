@@ -1,4 +1,5 @@
 import random
+import statistics as st
 gender = [
     "W",
     "M",
@@ -141,16 +142,29 @@ salary = [
 #     print(s)
 
 # cau 1
-mean = 0
-stdev = 0
-for i in salary:
-    mean += i
-print(mean)
-mean /= len(salary)
-for i in salary:
-    stdev += (i - mean) ** 2
-stdev = stdev ** (1 / 2) / len(salary)
+mean= st.mean(salary)
+stdev= st.stdev(salary)
 print(mean, stdev)
+# cau 2
+female=[salary[i] for i in range(len(salary)) if gender[i] == 'W']
+female=sorted(female)
+print(female)
+print(len(female))
+count=0
+for i in female:
+    if i > mean:
+        count+=1
+print(count)
+# cau 3
+male=[salary[i] for i in range(len(salary)) if gender[i] == 'M']
+male=sorted(male)
+print(male)
+print(len(male))
+count=0
+for i in male:
+    if i > mean:
+        count+=1
+print(count)
 
 # cau 5
 # exam_30_stt = [random.randint(0, len(gender) - 1) for i in range(30)]
