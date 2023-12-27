@@ -22,6 +22,7 @@ salary = [27,61,52,69,88,85,79,99,77,165,41,83,144,74,143,131,34,
 mean= st.mean(salary)
 stdev= st.pstdev(salary)
 print(mean, stdev)
+print(st.stdev(salary))
 # cau 2
 # female=[salary[i] for i in range(len(salary)) if gender[i] == 'W']
 # female=sorted(female)
